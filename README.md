@@ -53,6 +53,14 @@ Data is saved separately per student in browser `localStorage`. Use the sidebar 
 - `src/style.css` — responsive styles
 - `index.html` — Vite entry
 
+## Interactive skill tree
+
+- Onboarding and the dashboard share `src/components/SkillMap.jsx` and the prerequisite graph in `src/skill-path.js`. Select a node to preview lessons, highlight its prerequisite branches, and open its next available prerequisite or lesson.
+- **Skip Diagnosis (Start from Level 0)** opens the beginner tree immediately. The diagnostic averages all answers for each concept before personalizing the same tree after path preparation.
+- A concept unlocks dependent skills when all three of its lessons have been explored or its diagnostic readiness reaches 80. These remain illustrative prototype rules, not validated mastery estimates. Progress is saved per account.
+- The tree supports English/Arabic, RTL layouts, keyboard navigation, mobile skill previews, and reduced-motion preferences.
+- Validate with `npm run build` and `node --test src/skill-path.test.js`.
+
 ## v0.4 — Interactive lesson experience and course orientation
 
 - The Skill Map now opens a learning hub for each of the six sample concepts. Each concept contains three demo lessons. Opening a lesson presents **Watch Video**, **Read & Explore**, **Play a Mini Game**, and **Quick Check** as separate options. The learner can switch methods and mark lessons explored; that state is saved locally per account.
@@ -62,5 +70,5 @@ Data is saved separately per student in browser `localStorage`. Use the sidebar 
 - Mahmoud Usama remains the preloaded returning student. The login screen supports account switching and resetting Omar to the first-time journey.
 - Learning lesson copy, sample code and lecture citations are **illustrative demo content** pending upload and instructor approval of actual course materials. Existing ST1–ST17 prototype routes remain.
 
-Run with `npm install` and `npm run dev`. The source parsed cleanly with the TypeScript JSX parser in this environment, but dependency installation/build could not be completed due to network-timeout restrictions.
+Run with `npm install` and `npm run dev`.
 # adaptive_learning_demo
