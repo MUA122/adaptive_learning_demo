@@ -44,7 +44,7 @@ Data is saved separately per student in browser `localStorage`. Use the sidebar 
 - The tutor demonstrates bilingual/course-scoped responses but does not perform live retrieval, grounding verification, or source-file navigation. The source labels are illustrative.
 - Diagnostic selection is a fixed sample rather than fully graph-adaptive; the user journey and flow are represented without an actual GNN/BKT/KT model.
 - The mock quiz illustrates question flow, but has no real countdown timer. Consent is a prototype toggle; research exports, secure identity separation, offline synchronization, accessibility audit, and all instructor screens require future engineering.
-- The end-of-course navigation is a **demo shortcut**. In a production app these screens unlock at the end of the semester.
+- Course Completion stays locked until all 18 required lessons are marked explored. Its hover/tap popover previews the connected course roadmap. Diagnostic readiness does not bypass this gate. Passing the sample Final Assessment (70% pass mark) completes Introduction to Programming and marks Machine Learning as the next unlocked course; future-course lesson content is not included in this prototype.
 - Student-facing screens exist for ST1–ST17, but several deeper rules described in the source are deliberately simulated rather than production-functional.
 
 ## Files
@@ -59,7 +59,7 @@ Data is saved separately per student in browser `localStorage`. Use the sidebar 
 - **Skip Diagnosis (Start from Level 0)** opens the beginner tree immediately. The diagnostic averages all answers for each concept before personalizing the same tree after path preparation.
 - A concept unlocks dependent skills when all three of its lessons have been explored or its diagnostic readiness reaches 80. These remain illustrative prototype rules, not validated mastery estimates. Progress is saved per account.
 - The tree supports English/Arabic, RTL layouts, keyboard navigation, mobile skill previews, and reduced-motion preferences.
-- Validate with `npm run build` and `node --test src/skill-path.test.js`.
+- Validate with `npm run build` and `node --test src/skill-path.test.js src/course-completion.test.js`.
 
 ## v0.4 — Interactive lesson experience and course orientation
 
